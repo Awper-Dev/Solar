@@ -35,7 +35,7 @@ expression
    |   expression op=PLUS expression #Add
    |   expression op=MINUS expression #Sub
    |   expression op=DIV expression #Div
-   |   expression op=MUL expression #MUL
+   |   expression op=MUL expression #Mul
    |   definition #Def
    |   application #App
    |   assignment #Ass

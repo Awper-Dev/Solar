@@ -25,20 +25,22 @@ return :
     'return' expression;
 
 
-literal :
-    | INT
+literal
+    : INT
     | BOOL
     ;
 
 expression
-   :
-   |   literal
-   |   expression (PLUS | MINUS | DIV | MUL) expression
-   |   definition
-   |   application
-   |   assignment
-   |   if
-   |   ifelse
+   :   literal #Lit
+   |   expression op=PLUS expression #Add
+   |   expression op=MINUS expression #Sub
+   |   expression op=DIV expression #Div
+   |   expression op=MUL expression #MUL
+   |   definition #Def
+   |   application #App
+   |   assignment #Ass
+   |   if #Ifs
+   |   ifelse #Ifelses
    ;
 
 PLUS   :  '+';
